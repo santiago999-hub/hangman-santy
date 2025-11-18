@@ -191,6 +191,11 @@ h1 {
     50% { transform: scale(1.02); }
 }
 
+@keyframes winPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 30px 100px rgba(102, 126, 234, 0.6); }
+}
+
 .hangman-drawing {
     display: flex;
     justify-content: center;
@@ -219,9 +224,10 @@ h1 {
 }
 
 .game-info {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
     padding: 12px 15px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
@@ -230,22 +236,56 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.game-info p {
-    font-size: 1em;
+.stat-item {
+    text-align: center;
+}
+
+.stat-item p {
+    font-size: 0.85em;
     color: #333;
     font-weight: 600;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
+    line-height: 1.2;
 }
 
-.game-info span {
+.stat-item span {
     font-weight: 800;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    display: block;
+}
+
+.category-display {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    text-align: center;
+    border: 2px solid #ffc107;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
+}
+
+.category-display p {
+    font-size: 0.9em;
+    color: #856404;
+    font-weight: 700;
+    margin: 3px 0;
+}
+
+.category-display span {
+    font-weight: 800;
+    color: #664d03;
+}
+
+.words-remaining {
+    font-size: 0.8em !important;
+    opacity: 0.9;
 }
 
 .word-display {
@@ -518,11 +558,25 @@ h1 {
     }
 
     .game-info {
-        padding: 10px;
+        padding: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
     }
 
-    .game-info p {
-        font-size: 0.9em;
+    .stat-item p {
+        font-size: 0.75em;
+    }
+
+    .stat-item span {
+        font-size: 1.1em;
+    }
+
+    .category-display {
+        padding: 6px 10px;
+    }
+
+    .category-display p {
+        font-size: 0.75em;
     }
 
     .hint {

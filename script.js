@@ -1,27 +1,87 @@
-// Lista de palabras con sus pistas (dos líneas)
-const words = [
-    { word: "JAVASCRIPT", hint: "Lenguaje de programación para la web\nSe ejecuta en navegadores y servidores" },
-    { word: "COMPUTADORA", hint: "Dispositivo electrónico para procesar datos\nTiene CPU, memoria y almacenamiento" },
-    { word: "PROGRAMACION", hint: "Arte de escribir código\nCrear instrucciones para las computadoras" },
-    { word: "INTERNET", hint: "Red mundial de comunicación\nConecta millones de dispositivos globalmente" },
-    { word: "DESARROLLO", hint: "Proceso de crear software\nDiseñar, codificar y probar aplicaciones" },
-    { word: "ALGORITMO", hint: "Secuencia de pasos para resolver un problema\nBase fundamental de la programación" },
-    { word: "TECLADO", hint: "Dispositivo de entrada con letras\nPermite escribir texto y comandos" },
-    { word: "MONITOR", hint: "Pantalla de la computadora\nDispositivo de salida visual" },
-    { word: "SERVIDOR", hint: "Computadora que proporciona servicios\nResponde a peticiones de clientes" },
-    { word: "NAVEGADOR", hint: "Aplicación para explorar la web\nChrome, Firefox o Edge son ejemplos" },
-    { word: "PYTHON", hint: "Lenguaje de programación con nombre de serpiente\nMuy popular para IA y ciencia de datos" },
-    { word: "GITHUB", hint: "Plataforma para alojar código\nPermite colaboración y control de versiones" },
-    { word: "VARIABLE", hint: "Contenedor de datos en programación\nAlmacena valores que pueden cambiar" },
-    { word: "FUNCION", hint: "Bloque de código reutilizable\nRealiza una tarea específica" },
-    { word: "DEPURAR", hint: "Proceso de encontrar y corregir errores\nTambién llamado debugging" }
+// Lista completa de palabras con sus pistas (dos líneas)
+const allWords = [
+    // Tecnología y Programación
+    { word: "JAVASCRIPT", hint: "Lenguaje de programación para la web\nSe ejecuta en navegadores y servidores", category: "Tecnología" },
+    { word: "PYTHON", hint: "Lenguaje de programación con nombre de serpiente\nMuy popular para IA y ciencia de datos", category: "Tecnología" },
+    { word: "PROGRAMACION", hint: "Arte de escribir código\nCrear instrucciones para las computadoras", category: "Tecnología" },
+    { word: "ALGORITMO", hint: "Secuencia de pasos para resolver un problema\nBase fundamental de la programación", category: "Tecnología" },
+    { word: "DESARROLLO", hint: "Proceso de crear software\nDiseñar, codificar y probar aplicaciones", category: "Tecnología" },
+    { word: "VARIABLE", hint: "Contenedor de datos en programación\nAlmacena valores que pueden cambiar", category: "Tecnología" },
+    { word: "FUNCION", hint: "Bloque de código reutilizable\nRealiza una tarea específica", category: "Tecnología" },
+    { word: "DEPURAR", hint: "Proceso de encontrar y corregir errores\nTambién llamado debugging", category: "Tecnología" },
+    { word: "COMPILADOR", hint: "Traduce código a lenguaje de máquina\nConvierte programas en ejecutables", category: "Tecnología" },
+    { word: "FRAMEWORK", hint: "Estructura base para desarrollo\nFacilita la creación de aplicaciones", category: "Tecnología" },
+    { word: "DEBUGGING", hint: "Proceso de eliminar bugs del código\nBuscar y corregir errores de software", category: "Tecnología" },
+    { word: "BACKEND", hint: "Parte del servidor de una aplicación\nManeja lógica y base de datos", category: "Tecnología" },
+    { word: "FRONTEND", hint: "Interfaz visual de una aplicación\nLo que el usuario ve e interactúa", category: "Tecnología" },
+    { word: "DATABASE", hint: "Sistema para almacenar datos\nOrganiza información de forma estructurada", category: "Tecnología" },
+    { word: "INTERFACE", hint: "Punto de interacción entre sistemas\nConexión entre usuario y programa", category: "Tecnología" },
+    
+    // Hardware y Dispositivos
+    { word: "COMPUTADORA", hint: "Dispositivo electrónico para procesar datos\nTiene CPU, memoria y almacenamiento", category: "Hardware" },
+    { word: "TECLADO", hint: "Dispositivo de entrada con letras\nPermite escribir texto y comandos", category: "Hardware" },
+    { word: "MONITOR", hint: "Pantalla de la computadora\nDispositivo de salida visual", category: "Hardware" },
+    { word: "PROCESADOR", hint: "Cerebro de la computadora\nEjecuta instrucciones y cálculos", category: "Hardware" },
+    { word: "MEMORIA", hint: "Almacena datos temporalmente\nRAM permite acceso rápido", category: "Hardware" },
+    { word: "DISCO", hint: "Almacenamiento permanente de datos\nGuarda archivos y programas", category: "Hardware" },
+    { word: "MOTHERBOARD", hint: "Placa base de la computadora\nConecta todos los componentes", category: "Hardware" },
+    { word: "ROUTER", hint: "Distribuye conexión de internet\nConecta dispositivos en red local", category: "Hardware" },
+    { word: "IMPRESORA", hint: "Dispositivo de salida en papel\nImprime documentos físicos", category: "Hardware" },
+    
+    // Internet y Redes
+    { word: "INTERNET", hint: "Red mundial de comunicación\nConecta millones de dispositivos globalmente", category: "Internet" },
+    { word: "NAVEGADOR", hint: "Aplicación para explorar la web\nChrome, Firefox o Edge son ejemplos", category: "Internet" },
+    { word: "SERVIDOR", hint: "Computadora que proporciona servicios\nResponde a peticiones de clientes", category: "Internet" },
+    { word: "WEBSITE", hint: "Sitio en la world wide web\nPáginas conectadas por enlaces", category: "Internet" },
+    { word: "PROTOCOLO", hint: "Reglas de comunicación en redes\nDefine cómo se transfieren datos", category: "Internet" },
+    { word: "DOMINIO", hint: "Nombre único de un sitio web\nEjemplo: google.com", category: "Internet" },
+    { word: "HOSTING", hint: "Servicio de alojamiento web\nEspacio donde vive tu sitio", category: "Internet" },
+    { word: "DOWNLOAD", hint: "Descargar archivos de internet\nTraer datos a tu dispositivo", category: "Internet" },
+    { word: "STREAMING", hint: "Transmisión continua de contenido\nVer videos sin descargar", category: "Internet" },
+    { word: "FIREWALL", hint: "Protección de red contra intrusos\nFiltra tráfico no autorizado", category: "Internet" },
+    
+    // Plataformas y Herramientas
+    { word: "GITHUB", hint: "Plataforma para alojar código\nPermite colaboración y control de versiones", category: "Plataformas" },
+    { word: "STACKOVERFLOW", hint: "Comunidad de programadores\nRespuestas a preguntas técnicas", category: "Plataformas" },
+    { word: "WORDPRESS", hint: "Sistema de gestión de contenidos\nCrea sitios web y blogs fácilmente", category: "Plataformas" },
+    { word: "VISUAL", hint: "Editor de código muy popular\nCreado por Microsoft", category: "Plataformas" },
+    { word: "DOCKER", hint: "Plataforma de contenedores\nEmpaqueta aplicaciones con dependencias", category: "Plataformas" },
+    
+    // Conceptos de Software
+    { word: "SOFTWARE", hint: "Programas y aplicaciones\nParte no física de la computadora", category: "Software" },
+    { word: "APLICACION", hint: "Programa con función específica\nSoftware que usas a diario", category: "Software" },
+    { word: "SISTEMA", hint: "Conjunto organizado de elementos\nSoftware que gestiona hardware", category: "Software" },
+    { word: "ARCHIVO", hint: "Unidad de datos almacenados\nDocumento, imagen o programa", category: "Software" },
+    { word: "CARPETA", hint: "Contenedor de archivos\nOrganiza documentos en directorios", category: "Software" },
+    { word: "ACTUALIZACION", hint: "Nueva versión de software\nMejora funciones y seguridad", category: "Software" },
+    { word: "INSTALACION", hint: "Proceso de configurar software\nPreparar programa para usar", category: "Software" },
+    { word: "LICENCIA", hint: "Permiso para usar software\nDerechos de uso del programa", category: "Software" },
+    
+    // Seguridad
+    { word: "PASSWORD", hint: "Contraseña de acceso\nClave secreta para autenticarse", category: "Seguridad" },
+    { word: "ENCRIPTACION", hint: "Codificación de información\nProtege datos con cifrado", category: "Seguridad" },
+    { word: "ANTIVIRUS", hint: "Protección contra malware\nDetecta y elimina virus", category: "Seguridad" },
+    { word: "HACKER", hint: "Experto en seguridad informática\nPuede ser ético o malicioso", category: "Seguridad" },
+    { word: "BACKUP", hint: "Copia de seguridad de datos\nRespaldo para recuperar información", category: "Seguridad" },
+    
+    // Multimedia
+    { word: "PIXEL", hint: "Punto más pequeño en pantalla\nUnidad básica de imagen digital", category: "Multimedia" },
+    { word: "RESOLUCION", hint: "Cantidad de píxeles en pantalla\nMide calidad de imagen", category: "Multimedia" },
+    { word: "RENDERIZAR", hint: "Generar imagen desde modelo 3D\nProcesar gráficos computacionales", category: "Multimedia" },
+    { word: "STREAMING", hint: "Transmisión en tiempo real\nContenido sin necesidad de descarga", category: "Multimedia" },
+    { word: "PODCAST", hint: "Programa de audio bajo demanda\nEpisodios que puedes escuchar cuando quieras", category: "Multimedia" }
 ];
 
+let availableWords = [...allWords]; // Copia de palabras disponibles
+let usedWords = []; // Palabras ya jugadas
 let currentWord = "";
 let currentHint = "";
+let currentCategory = "";
 let guessedLetters = [];
 let attemptsLeft = 6;
 let score = 0;
+let gamesPlayed = 0;
+let gamesWon = 0;
 let gameActive = true;
 
 // Partes del cuerpo del ahorcado en orden
@@ -32,6 +92,10 @@ const wordDisplay = document.getElementById("wordDisplay");
 const keyboard = document.getElementById("keyboard");
 const attemptsElement = document.getElementById("attempts");
 const scoreElement = document.getElementById("score");
+const gamesPlayedElement = document.getElementById("gamesPlayed");
+const gamesWonElement = document.getElementById("gamesWon");
+const categoryElement = document.getElementById("category");
+const wordsRemainingElement = document.getElementById("wordsRemaining");
 const messageElement = document.getElementById("message");
 const hintElement = document.getElementById("hint");
 const newGameBtn = document.getElementById("newGameBtn");
@@ -53,17 +117,37 @@ function createKeyboard() {
 
 // Iniciar nuevo juego
 function newGame() {
-    const randomIndex = Math.floor(Math.random() * words.length);
-    currentWord = words[randomIndex].word;
-    currentHint = words[randomIndex].hint;
+    // Si no hay palabras disponibles, reiniciar el pool
+    if (availableWords.length === 0) {
+        availableWords = [...allWords];
+        usedWords = [];
+        showMessage("🎊 ¡Completaste todas las palabras! Reiniciando...", "win");
+        setTimeout(() => {
+            messageElement.textContent = "";
+        }, 2000);
+    }
+    
+    // Seleccionar palabra aleatoria de las disponibles
+    const randomIndex = Math.floor(Math.random() * availableWords.length);
+    const selectedWord = availableWords[randomIndex];
+    
+    // Mover palabra a usadas y quitarla de disponibles
+    currentWord = selectedWord.word;
+    currentHint = selectedWord.hint;
+    currentCategory = selectedWord.category;
+    usedWords.push(selectedWord);
+    availableWords.splice(randomIndex, 1);
+    
     guessedLetters = [];
     attemptsLeft = 6;
     gameActive = true;
+    gamesPlayed++;
     
     messageElement.textContent = "";
     messageElement.className = "message";
     hintElement.textContent = "";
     hintElement.style.display = "none";
+    hintBtn.textContent = "💡 Ver Pista";
     
     // Ocultar todas las partes del cuerpo
     resetHangman();
@@ -71,6 +155,13 @@ function newGame() {
     updateDisplay();
     createKeyboard();
     updateAttempts();
+    updateStats();
+}
+
+// Mostrar mensaje temporal
+function showMessage(text, type) {
+    messageElement.textContent = text;
+    messageElement.className = `message ${type}`;
 }
 
 // Resetear el dibujo del ahorcado
@@ -153,11 +244,18 @@ function checkWin() {
     
     if (allLettersGuessed) {
         gameActive = false;
-        messageElement.textContent = "🎉 ¡Ganaste! ¡Felicitaciones!";
+        gamesWon++;
+        score += attemptsLeft * 10 + 50; // Bonus por ganar
+        
+        messageElement.textContent = `🎉 ¡Excelente! +${attemptsLeft * 10 + 50} puntos`;
         messageElement.className = "message win";
-        score += attemptsLeft * 10;
+        
         updateScore();
+        updateStats();
         disableKeyboard();
+        
+        // Efecto de confeti (visual)
+        celebrateWin();
     }
 }
 
@@ -165,8 +263,9 @@ function checkWin() {
 function checkLose() {
     if (attemptsLeft === 0) {
         gameActive = false;
-        messageElement.textContent = `😢 Perdiste. La palabra era: ${currentWord}`;
+        messageElement.textContent = `😢 Game Over - Era: ${currentWord}`;
         messageElement.className = "message lose";
+        updateStats();
         disableKeyboard();
         revealWord();
     }
@@ -191,6 +290,27 @@ function disableKeyboard() {
 // Actualizar puntuación
 function updateScore() {
     scoreElement.textContent = score;
+}
+
+// Actualizar estadísticas
+function updateStats() {
+    gamesPlayedElement.textContent = gamesPlayed;
+    gamesWonElement.textContent = gamesWon;
+    categoryElement.textContent = currentCategory || "---";
+    wordsRemainingElement.textContent = availableWords.length;
+    
+    // Calcular porcentaje de victorias
+    const winRate = gamesPlayed > 0 ? Math.round((gamesWon / gamesPlayed) * 100) : 0;
+    gamesWonElement.title = `${winRate}% de victorias`;
+}
+
+// Efecto de celebración al ganar
+function celebrateWin() {
+    const container = document.querySelector('.container');
+    container.style.animation = 'none';
+    setTimeout(() => {
+        container.style.animation = 'winPulse 0.5s ease 3';
+    }, 10);
 }
 
 // Mostrar pista
