@@ -63,6 +63,7 @@ function newGame() {
     messageElement.textContent = "";
     messageElement.className = "message";
     hintElement.textContent = "";
+    hintElement.style.display = "none";
     
     // Ocultar todas las partes del cuerpo
     resetHangman();
@@ -195,7 +196,14 @@ function updateScore() {
 // Mostrar pista
 function showHint() {
     if (gameActive && currentHint) {
-        hintElement.textContent = `💡 Pista: ${currentHint}`;
+        if (hintElement.style.display === "none" || hintElement.style.display === "") {
+            hintElement.textContent = `💡 Pista: ${currentHint}`;
+            hintElement.style.display = "flex";
+            hintBtn.textContent = "🔒 Ocultar Pista";
+        } else {
+            hintElement.style.display = "none";
+            hintBtn.textContent = "💡 Ver Pista";
+        }
     }
 }
 
