@@ -82,6 +82,8 @@ let attemptsLeft = 6;
 let score = 0;
 let gamesPlayed = 0;
 let gamesWon = 0;
+let currentStreak = 0; // Racha actual
+let bestStreak = 0; // Mejor racha histórica
 let gameActive = true;
 
 // Partes del cuerpo del ahorcado en orden
@@ -94,12 +96,15 @@ const attemptsElement = document.getElementById("attempts");
 const scoreElement = document.getElementById("score");
 const gamesPlayedElement = document.getElementById("gamesPlayed");
 const gamesWonElement = document.getElementById("gamesWon");
+const currentStreakElement = document.getElementById("currentStreak");
+const bestStreakElement = document.getElementById("bestStreak");
 const categoryElement = document.getElementById("category");
 const wordsRemainingElement = document.getElementById("wordsRemaining");
 const messageElement = document.getElementById("message");
 const hintElement = document.getElementById("hint");
 const newGameBtn = document.getElementById("newGameBtn");
 const hintBtn = document.getElementById("hintBtn");
+const shareBtn = document.getElementById("shareBtn");
 
 // Crear teclado
 function createKeyboard() {
@@ -245,9 +250,25 @@ function checkWin() {
     if (allLettersGuessed) {
         gameActive = false;
         gamesWon++;
+        currentStreak++;
+        
+        // Actualizar mejor racha
+        if (currentStreak > bestStreak) {
+            bestStreak = currentStreak;
+            saveStats();
+        }
+        
         score += attemptsLeft * 10 + 50; // Bonus por ganar
         
-        messageElement.textContent = `🎉 ¡Excelente! +${attemptsLeft * 10 + 50} puntos`;
+        let message = `🎉 ¡Excelente! +${attemptsLeft * 10 + 50} pts`;
+        if (currentStreak > 1) {
+            message += ` | 🔥 Racha: ${currentStreak}`;
+        }
+        if (currentStreak === bestStreak && currentStreak >= 5) {
+            message = `🏆 ¡NUEVO RÉCORD! Racha: ${currentStreak} 🔥`;
+        }
+        
+        messageElement.textContent = message;
         messageElement.className = "message win";
         
         updateScore();
@@ -256,6 +277,9 @@ function checkWin() {
         
         // Efecto de confeti (visual)
         celebrateWin();
+        
+        // Guardar estadísticas
+        saveStats();
     }
 }
 
@@ -263,11 +287,23 @@ function checkWin() {
 function checkLose() {
     if (attemptsLeft === 0) {
         gameActive = false;
-        messageElement.textContent = `😢 Game Over - Era: ${currentWord}`;
+        
+        let message = `😢 Game Over - Era: ${currentWord}`;
+        if (currentStreak > 0) {
+            message += ` | Racha perdida: ${currentStreak}`;
+        }
+        
+        // Resetear racha actual
+        currentStreak = 0;
+        
+        messageElement.textContent = message;
         messageElement.className = "message lose";
         updateStats();
         disableKeyboard();
         revealWord();
+        
+        // Guardar estadísticas
+        saveStats();
     }
 }
 
@@ -296,12 +332,21 @@ function updateScore() {
 function updateStats() {
     gamesPlayedElement.textContent = gamesPlayed;
     gamesWonElement.textContent = gamesWon;
+    currentStreakElement.textContent = currentStreak;
+    bestStreakElement.textContent = bestStreak;
     categoryElement.textContent = currentCategory || "---";
     wordsRemainingElement.textContent = availableWords.length;
     
     // Calcular porcentaje de victorias
     const winRate = gamesPlayed > 0 ? Math.round((gamesWon / gamesPlayed) * 100) : 0;
     gamesWonElement.title = `${winRate}% de victorias`;
+    
+    // Efecto visual en racha
+    if (currentStreak >= 3) {
+        currentStreakElement.style.animation = 'streakPulse 1s ease infinite';
+    } else {
+        currentStreakElement.style.animation = 'none';
+    }
 }
 
 // Efecto de celebración al ganar
@@ -311,6 +356,58 @@ function celebrateWin() {
     setTimeout(() => {
         container.style.animation = 'winPulse 0.5s ease 3';
     }, 10);
+}
+
+// Guardar estadísticas en localStorage
+function saveStats() {
+    const stats = {
+        score,
+        gamesPlayed,
+        gamesWon,
+        currentStreak,
+        bestStreak
+    };
+    localStorage.setItem('hangmanStats', JSON.stringify(stats));
+}
+
+// Cargar estadísticas desde localStorage
+function loadStats() {
+    const saved = localStorage.getItem('hangmanStats');
+    if (saved) {
+        const stats = JSON.parse(saved);
+        score = stats.score || 0;
+        gamesPlayed = stats.gamesPlayed || 0;
+        gamesWon = stats.gamesWon || 0;
+        currentStreak = stats.currentStreak || 0;
+        bestStreak = stats.bestStreak || 0;
+        updateScore();
+        updateStats();
+    }
+}
+
+// Compartir en WhatsApp
+function shareOnWhatsApp() {
+    const winRate = gamesPlayed > 0 ? Math.round((gamesWon / gamesPlayed) * 100) : 0;
+    
+    let message = `🎮 *Ahorcado / Hangman* 🎮\n\n`;
+    message += `📊 *Mis Estadísticas:*\n`;
+    message += `🏆 Puntuación: ${score}\n`;
+    message += `🎯 Jugadas: ${gamesPlayed}\n`;
+    message += `✅ Ganadas: ${gamesWon} (${winRate}%)\n`;
+    message += `🔥 Racha actual: ${currentStreak}\n`;
+    message += `⭐ Mejor racha: ${bestStreak}\n\n`;
+    
+    if (currentStreak >= 5) {
+        message += `¡Estoy en racha de ${currentStreak} victorias! 🔥🔥🔥\n\n`;
+    } else if (bestStreak >= 10) {
+        message += `¡Mi récord es ${bestStreak} victorias seguidas! 🏆\n\n`;
+    }
+    
+    message += `¿Puedes superarme? 🎯\n`;
+    message += `Juega aquí: https://santiago999-hub.github.io/hangman-santy`;
+    
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 }
 
 // Mostrar pista
@@ -330,6 +427,7 @@ function showHint() {
 // Event listeners
 newGameBtn.addEventListener("click", newGame);
 hintBtn.addEventListener("click", showHint);
+shareBtn.addEventListener("click", shareOnWhatsApp);
 
 // Soporte para teclado físico
 document.addEventListener("keydown", (e) => {
@@ -339,5 +437,6 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// Iniciar el juego al cargar
+// Cargar estadísticas guardadas y iniciar el juego
+loadStats();
 newGame();
