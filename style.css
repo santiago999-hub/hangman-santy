@@ -302,6 +302,11 @@ h1 {
     margin: 3px 0;
 }
 
+.category-info {
+    font-size: 0.95em !important;
+    letter-spacing: 0.5px;
+}
+
 .category-display span {
     font-weight: 800;
     color: #664d03;

@@ -1,75 +1,75 @@
 // Lista completa de palabras con sus pistas (dos líneas)
 const allWords = [
     // Tecnología y Programación
-    { word: "JAVASCRIPT", hint: "Lenguaje de programación para la web\nSe ejecuta en navegadores y servidores", category: "Tecnología" },
-    { word: "PYTHON", hint: "Lenguaje de programación con nombre de serpiente\nMuy popular para IA y ciencia de datos", category: "Tecnología" },
-    { word: "PROGRAMACION", hint: "Arte de escribir código\nCrear instrucciones para las computadoras", category: "Tecnología" },
-    { word: "ALGORITMO", hint: "Secuencia de pasos para resolver un problema\nBase fundamental de la programación", category: "Tecnología" },
-    { word: "DESARROLLO", hint: "Proceso de crear software\nDiseñar, codificar y probar aplicaciones", category: "Tecnología" },
-    { word: "VARIABLE", hint: "Contenedor de datos en programación\nAlmacena valores que pueden cambiar", category: "Tecnología" },
-    { word: "FUNCION", hint: "Bloque de código reutilizable\nRealiza una tarea específica", category: "Tecnología" },
-    { word: "DEPURAR", hint: "Proceso de encontrar y corregir errores\nTambién llamado debugging", category: "Tecnología" },
-    { word: "COMPILADOR", hint: "Traduce código a lenguaje de máquina\nConvierte programas en ejecutables", category: "Tecnología" },
-    { word: "FRAMEWORK", hint: "Estructura base para desarrollo\nFacilita la creación de aplicaciones", category: "Tecnología" },
-    { word: "DEBUGGING", hint: "Proceso de eliminar bugs del código\nBuscar y corregir errores de software", category: "Tecnología" },
-    { word: "BACKEND", hint: "Parte del servidor de una aplicación\nManeja lógica y base de datos", category: "Tecnología" },
-    { word: "FRONTEND", hint: "Interfaz visual de una aplicación\nLo que el usuario ve e interactúa", category: "Tecnología" },
-    { word: "DATABASE", hint: "Sistema para almacenar datos\nOrganiza información de forma estructurada", category: "Tecnología" },
-    { word: "INTERFACE", hint: "Punto de interacción entre sistemas\nConexión entre usuario y programa", category: "Tecnología" },
+    { word: "JAVASCRIPT", hint: "Lenguaje de programación para la web\nSe ejecuta en navegadores y servidores", category: "Tecnología", language: "Inglés" },
+    { word: "PYTHON", hint: "Lenguaje de programación con nombre de serpiente\nMuy popular para IA y ciencia de datos", category: "Tecnología", language: "Inglés" },
+    { word: "PROGRAMACION", hint: "Arte de escribir código\nCrear instrucciones para las computadoras", category: "Tecnología", language: "Español" },
+    { word: "ALGORITMO", hint: "Secuencia de pasos para resolver un problema\nBase fundamental de la programación", category: "Tecnología", language: "Español" },
+    { word: "DESARROLLO", hint: "Proceso de crear software\nDiseñar, codificar y probar aplicaciones", category: "Tecnología", language: "Español" },
+    { word: "VARIABLE", hint: "Contenedor de datos en programación\nAlmacena valores que pueden cambiar", category: "Tecnología", language: "Español" },
+    { word: "FUNCION", hint: "Bloque de código reutilizable\nRealiza una tarea específica", category: "Tecnología", language: "Español" },
+    { word: "DEPURAR", hint: "Proceso de encontrar y corregir errores\nTambién llamado debugging", category: "Tecnología", language: "Español" },
+    { word: "COMPILADOR", hint: "Traduce código a lenguaje de máquina\nConvierte programas en ejecutables", category: "Tecnología", language: "Español" },
+    { word: "FRAMEWORK", hint: "Estructura base para desarrollo\nFacilita la creación de aplicaciones", category: "Tecnología", language: "Inglés" },
+    { word: "DEBUGGING", hint: "Proceso de eliminar bugs del código\nBuscar y corregir errores de software", category: "Tecnología", language: "Inglés" },
+    { word: "BACKEND", hint: "Parte del servidor de una aplicación\nManeja lógica y base de datos", category: "Tecnología", language: "Inglés" },
+    { word: "FRONTEND", hint: "Interfaz visual de una aplicación\nLo que el usuario ve e interactúa", category: "Tecnología", language: "Inglés" },
+    { word: "DATABASE", hint: "Sistema para almacenar datos\nOrganiza información de forma estructurada", category: "Tecnología", language: "Inglés" },
+    { word: "INTERFACE", hint: "Punto de interacción entre sistemas\nConexión entre usuario y programa", category: "Tecnología", language: "Inglés" },
     
     // Hardware y Dispositivos
-    { word: "COMPUTADORA", hint: "Dispositivo electrónico para procesar datos\nTiene CPU, memoria y almacenamiento", category: "Hardware" },
-    { word: "TECLADO", hint: "Dispositivo de entrada con letras\nPermite escribir texto y comandos", category: "Hardware" },
-    { word: "MONITOR", hint: "Pantalla de la computadora\nDispositivo de salida visual", category: "Hardware" },
-    { word: "PROCESADOR", hint: "Cerebro de la computadora\nEjecuta instrucciones y cálculos", category: "Hardware" },
-    { word: "MEMORIA", hint: "Almacena datos temporalmente\nRAM permite acceso rápido", category: "Hardware" },
-    { word: "DISCO", hint: "Almacenamiento permanente de datos\nGuarda archivos y programas", category: "Hardware" },
-    { word: "MOTHERBOARD", hint: "Placa base de la computadora\nConecta todos los componentes", category: "Hardware" },
-    { word: "ROUTER", hint: "Distribuye conexión de internet\nConecta dispositivos en red local", category: "Hardware" },
-    { word: "IMPRESORA", hint: "Dispositivo de salida en papel\nImprime documentos físicos", category: "Hardware" },
+    { word: "COMPUTADORA", hint: "Dispositivo electrónico para procesar datos\nTiene CPU, memoria y almacenamiento", category: "Hardware", language: "Español" },
+    { word: "TECLADO", hint: "Dispositivo de entrada con letras\nPermite escribir texto y comandos", category: "Hardware", language: "Español" },
+    { word: "MONITOR", hint: "Pantalla de la computadora\nDispositivo de salida visual", category: "Hardware", language: "Español" },
+    { word: "PROCESADOR", hint: "Cerebro de la computadora\nEjecuta instrucciones y cálculos", category: "Hardware", language: "Español" },
+    { word: "MEMORIA", hint: "Almacena datos temporalmente\nRAM permite acceso rápido", category: "Hardware", language: "Español" },
+    { word: "DISCO", hint: "Almacenamiento permanente de datos\nGuarda archivos y programas", category: "Hardware", language: "Español" },
+    { word: "MOTHERBOARD", hint: "Placa base de la computadora\nConecta todos los componentes", category: "Hardware", language: "Inglés" },
+    { word: "ROUTER", hint: "Distribuye conexión de internet\nConecta dispositivos en red local", category: "Hardware", language: "Inglés" },
+    { word: "IMPRESORA", hint: "Dispositivo de salida en papel\nImprime documentos físicos", category: "Hardware", language: "Español" },
     
     // Internet y Redes
-    { word: "INTERNET", hint: "Red mundial de comunicación\nConecta millones de dispositivos globalmente", category: "Internet" },
-    { word: "NAVEGADOR", hint: "Aplicación para explorar la web\nChrome, Firefox o Edge son ejemplos", category: "Internet" },
-    { word: "SERVIDOR", hint: "Computadora que proporciona servicios\nResponde a peticiones de clientes", category: "Internet" },
-    { word: "WEBSITE", hint: "Sitio en la world wide web\nPáginas conectadas por enlaces", category: "Internet" },
-    { word: "PROTOCOLO", hint: "Reglas de comunicación en redes\nDefine cómo se transfieren datos", category: "Internet" },
-    { word: "DOMINIO", hint: "Nombre único de un sitio web\nEjemplo: google.com", category: "Internet" },
-    { word: "HOSTING", hint: "Servicio de alojamiento web\nEspacio donde vive tu sitio", category: "Internet" },
-    { word: "DOWNLOAD", hint: "Descargar archivos de internet\nTraer datos a tu dispositivo", category: "Internet" },
-    { word: "STREAMING", hint: "Transmisión continua de contenido\nVer videos sin descargar", category: "Internet" },
-    { word: "FIREWALL", hint: "Protección de red contra intrusos\nFiltra tráfico no autorizado", category: "Internet" },
+    { word: "INTERNET", hint: "Red mundial de comunicación\nConecta millones de dispositivos globalmente", category: "Internet", language: "Inglés" },
+    { word: "NAVEGADOR", hint: "Aplicación para explorar la web\nChrome, Firefox o Edge son ejemplos", category: "Internet", language: "Español" },
+    { word: "SERVIDOR", hint: "Computadora que proporciona servicios\nResponde a peticiones de clientes", category: "Internet", language: "Español" },
+    { word: "WEBSITE", hint: "Sitio en la world wide web\nPáginas conectadas por enlaces", category: "Internet", language: "Inglés" },
+    { word: "PROTOCOLO", hint: "Reglas de comunicación en redes\nDefine cómo se transfieren datos", category: "Internet", language: "Español" },
+    { word: "DOMINIO", hint: "Nombre único de un sitio web\nEjemplo: google.com", category: "Internet", language: "Español" },
+    { word: "HOSTING", hint: "Servicio de alojamiento web\nEspacio donde vive tu sitio", category: "Internet", language: "Inglés" },
+    { word: "DOWNLOAD", hint: "Descargar archivos de internet\nTraer datos a tu dispositivo", category: "Internet", language: "Inglés" },
+    { word: "STREAMING", hint: "Transmisión continua de contenido\nVer videos sin descargar", category: "Internet", language: "Inglés" },
+    { word: "FIREWALL", hint: "Protección de red contra intrusos\nFiltra tráfico no autorizado", category: "Internet", language: "Inglés" },
     
     // Plataformas y Herramientas
-    { word: "GITHUB", hint: "Plataforma para alojar código\nPermite colaboración y control de versiones", category: "Plataformas" },
-    { word: "STACKOVERFLOW", hint: "Comunidad de programadores\nRespuestas a preguntas técnicas", category: "Plataformas" },
-    { word: "WORDPRESS", hint: "Sistema de gestión de contenidos\nCrea sitios web y blogs fácilmente", category: "Plataformas" },
-    { word: "VISUAL", hint: "Editor de código muy popular\nCreado por Microsoft", category: "Plataformas" },
-    { word: "DOCKER", hint: "Plataforma de contenedores\nEmpaqueta aplicaciones con dependencias", category: "Plataformas" },
+    { word: "GITHUB", hint: "Plataforma para alojar código\nPermite colaboración y control de versiones", category: "Plataformas", language: "Inglés" },
+    { word: "STACKOVERFLOW", hint: "Comunidad de programadores\nRespuestas a preguntas técnicas", category: "Plataformas", language: "Inglés" },
+    { word: "WORDPRESS", hint: "Sistema de gestión de contenidos\nCrea sitios web y blogs fácilmente", category: "Plataformas", language: "Inglés" },
+    { word: "VISUAL", hint: "Editor de código muy popular\nCreado por Microsoft", category: "Plataformas", language: "Inglés" },
+    { word: "DOCKER", hint: "Plataforma de contenedores\nEmpaqueta aplicaciones con dependencias", category: "Plataformas", language: "Inglés" },
     
     // Conceptos de Software
-    { word: "SOFTWARE", hint: "Programas y aplicaciones\nParte no física de la computadora", category: "Software" },
-    { word: "APLICACION", hint: "Programa con función específica\nSoftware que usas a diario", category: "Software" },
-    { word: "SISTEMA", hint: "Conjunto organizado de elementos\nSoftware que gestiona hardware", category: "Software" },
-    { word: "ARCHIVO", hint: "Unidad de datos almacenados\nDocumento, imagen o programa", category: "Software" },
-    { word: "CARPETA", hint: "Contenedor de archivos\nOrganiza documentos en directorios", category: "Software" },
-    { word: "ACTUALIZACION", hint: "Nueva versión de software\nMejora funciones y seguridad", category: "Software" },
-    { word: "INSTALACION", hint: "Proceso de configurar software\nPreparar programa para usar", category: "Software" },
-    { word: "LICENCIA", hint: "Permiso para usar software\nDerechos de uso del programa", category: "Software" },
+    { word: "SOFTWARE", hint: "Programas y aplicaciones\nParte no física de la computadora", category: "Software", language: "Inglés" },
+    { word: "APLICACION", hint: "Programa con función específica\nSoftware que usas a diario", category: "Software", language: "Español" },
+    { word: "SISTEMA", hint: "Conjunto organizado de elementos\nSoftware que gestiona hardware", category: "Software", language: "Español" },
+    { word: "ARCHIVO", hint: "Unidad de datos almacenados\nDocumento, imagen o programa", category: "Software", language: "Español" },
+    { word: "CARPETA", hint: "Contenedor de archivos\nOrganiza documentos en directorios", category: "Software", language: "Español" },
+    { word: "ACTUALIZACION", hint: "Nueva versión de software\nMejora funciones y seguridad", category: "Software", language: "Español" },
+    { word: "INSTALACION", hint: "Proceso de configurar software\nPreparar programa para usar", category: "Software", language: "Español" },
+    { word: "LICENCIA", hint: "Permiso para usar software\nDerechos de uso del programa", category: "Software", language: "Español" },
     
     // Seguridad
-    { word: "PASSWORD", hint: "Contraseña de acceso\nClave secreta para autenticarse", category: "Seguridad" },
-    { word: "ENCRIPTACION", hint: "Codificación de información\nProtege datos con cifrado", category: "Seguridad" },
-    { word: "ANTIVIRUS", hint: "Protección contra malware\nDetecta y elimina virus", category: "Seguridad" },
-    { word: "HACKER", hint: "Experto en seguridad informática\nPuede ser ético o malicioso", category: "Seguridad" },
-    { word: "BACKUP", hint: "Copia de seguridad de datos\nRespaldo para recuperar información", category: "Seguridad" },
+    { word: "PASSWORD", hint: "Contraseña de acceso\nClave secreta para autenticarse", category: "Seguridad", language: "Inglés" },
+    { word: "ENCRIPTACION", hint: "Codificación de información\nProtege datos con cifrado", category: "Seguridad", language: "Español" },
+    { word: "ANTIVIRUS", hint: "Protección contra malware\nDetecta y elimina virus", category: "Seguridad", language: "Inglés" },
+    { word: "HACKER", hint: "Experto en seguridad informática\nPuede ser ético o malicioso", category: "Seguridad", language: "Inglés" },
+    { word: "BACKUP", hint: "Copia de seguridad de datos\nRespaldo para recuperar información", category: "Seguridad", language: "Inglés" },
     
     // Multimedia
-    { word: "PIXEL", hint: "Punto más pequeño en pantalla\nUnidad básica de imagen digital", category: "Multimedia" },
-    { word: "RESOLUCION", hint: "Cantidad de píxeles en pantalla\nMide calidad de imagen", category: "Multimedia" },
-    { word: "RENDERIZAR", hint: "Generar imagen desde modelo 3D\nProcesar gráficos computacionales", category: "Multimedia" },
-    { word: "STREAMING", hint: "Transmisión en tiempo real\nContenido sin necesidad de descarga", category: "Multimedia" },
-    { word: "PODCAST", hint: "Programa de audio bajo demanda\nEpisodios que puedes escuchar cuando quieras", category: "Multimedia" }
+    { word: "PIXEL", hint: "Punto más pequeño en pantalla\nUnidad básica de imagen digital", category: "Multimedia", language: "Inglés" },
+    { word: "RESOLUCION", hint: "Cantidad de píxeles en pantalla\nMide calidad de imagen", category: "Multimedia", language: "Español" },
+    { word: "RENDERIZAR", hint: "Generar imagen desde modelo 3D\nProcesar gráficos computacionales", category: "Multimedia", language: "Español" },
+    { word: "STREAMING", hint: "Transmisión en tiempo real\nContenido sin necesidad de descarga", category: "Multimedia", language: "Inglés" },
+    { word: "PODCAST", hint: "Programa de audio bajo demanda\nEpisodios que puedes escuchar cuando quieras", category: "Multimedia", language: "Inglés" }
 ];
 
 let availableWords = [...allWords]; // Copia de palabras disponibles
@@ -77,6 +77,7 @@ let usedWords = []; // Palabras ya jugadas
 let currentWord = "";
 let currentHint = "";
 let currentCategory = "";
+let currentLanguage = "";
 let guessedLetters = [];
 let attemptsLeft = 6;
 let score = 0;
@@ -84,6 +85,7 @@ let gamesPlayed = 0;
 let gamesWon = 0;
 let currentStreak = 0; // Racha actual
 let bestStreak = 0; // Mejor racha histórica
+let hintUsed = false; // Si se usó la pista en la palabra actual
 let gameActive = true;
 
 // Partes del cuerpo del ahorcado en orden
@@ -140,6 +142,7 @@ function newGame() {
     currentWord = selectedWord.word;
     currentHint = selectedWord.hint;
     currentCategory = selectedWord.category;
+    currentLanguage = selectedWord.language;
     usedWords.push(selectedWord);
     availableWords.splice(randomIndex, 1);
     
@@ -147,12 +150,14 @@ function newGame() {
     attemptsLeft = 6;
     gameActive = true;
     gamesPlayed++;
+    hintUsed = false; // Resetear el uso de pista
     
     messageElement.textContent = "";
     messageElement.className = "message";
     hintElement.textContent = "";
     hintElement.style.display = "none";
-    hintBtn.textContent = "💡 Ver Pista";
+    hintBtn.textContent = `💡 Ver Pista (-20 pts)`;
+    hintBtn.disabled = false;
     
     // Ocultar todas las partes del cuerpo
     resetHangman();
@@ -337,6 +342,12 @@ function updateStats() {
     categoryElement.textContent = currentCategory || "---";
     wordsRemainingElement.textContent = availableWords.length;
     
+    // Mostrar idioma de la palabra actual
+    if (currentLanguage) {
+        const languageIcon = currentLanguage === "Español" ? "🇪🇸" : "🇺🇸";
+        categoryElement.textContent = `${currentCategory} ${languageIcon} ${currentLanguage}`;
+    }
+    
     // Calcular porcentaje de victorias
     const winRate = gamesPlayed > 0 ? Math.round((gamesWon / gamesPlayed) * 100) : 0;
     gamesWonElement.title = `${winRate}% de victorias`;
@@ -414,6 +425,13 @@ function shareOnWhatsApp() {
 function showHint() {
     if (gameActive && currentHint) {
         if (hintElement.style.display === "none" || hintElement.style.display === "") {
+            // Primera vez que se abre la pista - restar puntos
+            if (!hintUsed) {
+                score = Math.max(0, score - 20); // No permitir puntuación negativa
+                updateScore();
+                hintUsed = true;
+            }
+            
             hintElement.textContent = `💡 Pista: ${currentHint}`;
             hintElement.style.display = "flex";
             hintBtn.textContent = "🔒 Ocultar Pista";
