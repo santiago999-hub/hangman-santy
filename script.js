@@ -24,6 +24,9 @@ let attemptsLeft = 6;
 let score = 0;
 let gameActive = true;
 
+// Partes del cuerpo del ahorcado en orden
+const bodyParts = ['rope', 'head', 'body', 'leftArm', 'rightArm', 'leftLeg', 'rightLeg'];
+
 // Elementos del DOM
 const wordDisplay = document.getElementById("wordDisplay");
 const keyboard = document.getElementById("keyboard");
@@ -61,9 +64,21 @@ function newGame() {
     messageElement.className = "message";
     hintElement.textContent = "";
     
+    // Ocultar todas las partes del cuerpo
+    resetHangman();
+    
     updateDisplay();
     createKeyboard();
     updateAttempts();
+}
+
+// Resetear el dibujo del ahorcado
+function resetHangman() {
+    bodyParts.forEach(part => {
+        const element = document.getElementById(part);
+        element.classList.remove('show');
+        element.classList.add('hidden');
+    });
 }
 
 // Actualizar display de la palabra
@@ -104,11 +119,22 @@ function handleGuess(letter) {
         // Letra incorrecta
         key.classList.add("incorrect");
         attemptsLeft--;
+        showNextBodyPart();
         updateAttempts();
         checkLose();
     }
     
     key.classList.add("disabled");
+}
+
+// Mostrar siguiente parte del cuerpo
+function showNextBodyPart() {
+    const partIndex = 6 - attemptsLeft - 1;
+    if (partIndex >= 0 && partIndex < bodyParts.length) {
+        const part = document.getElementById(bodyParts[partIndex]);
+        part.classList.remove('hidden');
+        part.classList.add('show');
+    }
 }
 
 // Actualizar intentos

@@ -10,6 +10,34 @@
     <div class="container">
         <h1>🎮 Ahorcado / Hangman</h1>
         
+        <!-- Dibujo del Ahorcado -->
+        <div class="hangman-drawing">
+            <svg width="200" height="250" id="hangmanSvg">
+                <!-- Horca base -->
+                <line x1="10" y1="230" x2="150" y2="230" stroke="#333" stroke-width="4"/>
+                <!-- Poste vertical -->
+                <line x1="50" y1="230" x2="50" y2="20" stroke="#333" stroke-width="4"/>
+                <!-- Poste horizontal -->
+                <line x1="50" y1="20" x2="130" y2="20" stroke="#333" stroke-width="4"/>
+                <!-- Cuerda -->
+                <line x1="130" y1="20" x2="130" y2="50" stroke="#333" stroke-width="2" id="rope" class="hidden"/>
+                
+                <!-- Partes del cuerpo (ocultas inicialmente) -->
+                <!-- Cabeza -->
+                <circle cx="130" cy="70" r="20" stroke="#dc3545" stroke-width="3" fill="none" id="head" class="hidden"/>
+                <!-- Cuerpo -->
+                <line x1="130" y1="90" x2="130" y2="150" stroke="#dc3545" stroke-width="3" id="body" class="hidden"/>
+                <!-- Brazo izquierdo -->
+                <line x1="130" y1="110" x2="100" y2="130" stroke="#dc3545" stroke-width="3" id="leftArm" class="hidden"/>
+                <!-- Brazo derecho -->
+                <line x1="130" y1="110" x2="160" y2="130" stroke="#dc3545" stroke-width="3" id="rightArm" class="hidden"/>
+                <!-- Pierna izquierda -->
+                <line x1="130" y1="150" x2="110" y2="190" stroke="#dc3545" stroke-width="3" id="leftLeg" class="hidden"/>
+                <!-- Pierna derecha -->
+                <line x1="130" y1="150" x2="150" y2="190" stroke="#dc3545" stroke-width="3" id="rightLeg" class="hidden"/>
+            </svg>
+        </div>
+        
         <div class="game-info">
             <div class="attempts">
                 <p>Intentos restantes: <span id="attempts">6</span></p>
