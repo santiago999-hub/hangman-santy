@@ -339,13 +339,14 @@ function updateStats() {
     gamesWonElement.textContent = gamesWon;
     currentStreakElement.textContent = currentStreak;
     bestStreakElement.textContent = bestStreak;
-    categoryElement.textContent = currentCategory || "---";
     wordsRemainingElement.textContent = availableWords.length;
     
-    // Mostrar idioma de la palabra actual
-    if (currentLanguage) {
+    // Mostrar idioma solo si se usó la pista
+    if (hintUsed && currentLanguage) {
         const languageIcon = currentLanguage === "Español" ? "🇪🇸" : "🇺🇸";
         categoryElement.textContent = `${currentCategory} ${languageIcon} ${currentLanguage}`;
+    } else {
+        categoryElement.textContent = currentCategory || "---";
     }
     
     // Calcular porcentaje de victorias
@@ -425,11 +426,12 @@ function shareOnWhatsApp() {
 function showHint() {
     if (gameActive && currentHint) {
         if (hintElement.style.display === "none" || hintElement.style.display === "") {
-            // Primera vez que se abre la pista - restar puntos
+            // Primera vez que se abre la pista - restar puntos y revelar idioma
             if (!hintUsed) {
                 score = Math.max(0, score - 20); // No permitir puntuación negativa
                 updateScore();
                 hintUsed = true;
+                updateStats(); // Actualizar para mostrar el idioma
             }
             
             hintElement.textContent = `💡 Pista: ${currentHint}`;
