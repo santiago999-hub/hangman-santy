@@ -1,20 +1,20 @@
-// Lista de palabras con sus pistas
+// Lista de palabras con sus pistas (dos líneas)
 const words = [
-    { word: "JAVASCRIPT", hint: "Lenguaje de programación para la web" },
-    { word: "COMPUTADORA", hint: "Dispositivo electrónico para procesar datos" },
-    { word: "PROGRAMACION", hint: "Arte de escribir código" },
-    { word: "INTERNET", hint: "Red mundial de comunicación" },
-    { word: "DESARROLLO", hint: "Proceso de crear software" },
-    { word: "ALGORITMO", hint: "Secuencia de pasos para resolver un problema" },
-    { word: "TECLADO", hint: "Dispositivo de entrada con letras" },
-    { word: "MONITOR", hint: "Pantalla de la computadora" },
-    { word: "SERVIDOR", hint: "Computadora que proporciona servicios" },
-    { word: "NAVEGADOR", hint: "Aplicación para explorar la web" },
-    { word: "PYTHON", hint: "Lenguaje de programación con nombre de serpiente" },
-    { word: "GITHUB", hint: "Plataforma para alojar código" },
-    { word: "VARIABLE", hint: "Contenedor de datos en programación" },
-    { word: "FUNCION", hint: "Bloque de código reutilizable" },
-    { word: "DEPURAR", hint: "Proceso de encontrar y corregir errores" }
+    { word: "JAVASCRIPT", hint: "Lenguaje de programación para la web\nSe ejecuta en navegadores y servidores" },
+    { word: "COMPUTADORA", hint: "Dispositivo electrónico para procesar datos\nTiene CPU, memoria y almacenamiento" },
+    { word: "PROGRAMACION", hint: "Arte de escribir código\nCrear instrucciones para las computadoras" },
+    { word: "INTERNET", hint: "Red mundial de comunicación\nConecta millones de dispositivos globalmente" },
+    { word: "DESARROLLO", hint: "Proceso de crear software\nDiseñar, codificar y probar aplicaciones" },
+    { word: "ALGORITMO", hint: "Secuencia de pasos para resolver un problema\nBase fundamental de la programación" },
+    { word: "TECLADO", hint: "Dispositivo de entrada con letras\nPermite escribir texto y comandos" },
+    { word: "MONITOR", hint: "Pantalla de la computadora\nDispositivo de salida visual" },
+    { word: "SERVIDOR", hint: "Computadora que proporciona servicios\nResponde a peticiones de clientes" },
+    { word: "NAVEGADOR", hint: "Aplicación para explorar la web\nChrome, Firefox o Edge son ejemplos" },
+    { word: "PYTHON", hint: "Lenguaje de programación con nombre de serpiente\nMuy popular para IA y ciencia de datos" },
+    { word: "GITHUB", hint: "Plataforma para alojar código\nPermite colaboración y control de versiones" },
+    { word: "VARIABLE", hint: "Contenedor de datos en programación\nAlmacena valores que pueden cambiar" },
+    { word: "FUNCION", hint: "Bloque de código reutilizable\nRealiza una tarea específica" },
+    { word: "DEPURAR", hint: "Proceso de encontrar y corregir errores\nTambién llamado debugging" }
 ];
 
 let currentWord = "";
